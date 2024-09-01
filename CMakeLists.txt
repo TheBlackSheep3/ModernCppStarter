@@ -33,6 +33,10 @@ CPMAddPackage(
   OPTIONS "FMT_INSTALL YES" # create an installable target
 )
 
+# ---- Setup for clangd ----
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+configure_file(.clangd.in ${CMAKE_CURRENT_SOURCE_DIR}/.clangd)
+
 # ---- Add source files ----
 
 # Note: globbing sources is considered bad practice as CMake's generators may not detect new files
